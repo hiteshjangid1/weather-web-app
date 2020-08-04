@@ -1,5 +1,3 @@
-console.log('This is client side JS file')
-
 var weatherform=document.querySelector('form')
 var search=document.querySelector('input')
 var field=document.querySelector('#msg1')
