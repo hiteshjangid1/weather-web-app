@@ -72,7 +72,7 @@ app.get('/weather', (req, res) => {
             return res.send(error)
         }
 
-        forecast(longitude,latitude, (error, { temperature, feelslike }) => {
+        forecast(longitude,latitude, (error, { temperature, feelslike,humidity }) => {
             if (error) {
                 return res.send(error)
             }
@@ -80,7 +80,8 @@ app.get('/weather', (req, res) => {
             return res.send({
                 address:req.query.address,
                 temperature:temperature,
-                feelslike_temperature:feelslike
+                feelslike_temperature:feelslike,
+                humidity:humidity
             })
         })
     })

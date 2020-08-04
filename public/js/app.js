@@ -23,6 +23,7 @@ weatherform.addEventListener('submit',(event)=>{
             if (data.error) {
                 field.textContent=''
                 field2.textContent = data.error
+                field3.textContent=''
             }
             else {
                 field.textContent ="Address: "+data.address
