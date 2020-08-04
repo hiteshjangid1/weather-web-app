@@ -13,7 +13,7 @@ var partialpath=path.join(__dirname,'/templates/partial')
 hbs.registerPartials(partialpath)
 
 var app=express()
-var path=process.env.PORT || 3000
+var port=process.env.PORT || 3000
 
 app.set('view engine','hbs')
 app.set('views',viewpath)
@@ -104,7 +104,7 @@ app.get('*',(req,res)=>{
 })
 
 app.listen(port,()=>{
-    console.log('Server is on at port 3000')
+    console.log('Server is on at port '+port)
 })
 
 
