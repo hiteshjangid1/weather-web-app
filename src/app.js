@@ -13,13 +13,15 @@ var partialpath=path.join(__dirname,'/templates/partial')
 hbs.registerPartials(partialpath)
 
 var app=express()
+var path=process.env.PORT || 3000
+
 app.set('view engine','hbs')
 app.set('views',viewpath)
 app.use(express.static(directorypath))
 
 app.get('',(req,res)=>{
     res.render('index',{
-        name:'Hitesh',
+        name:'Annonymous',
         degree:'B. Tech.'
 
     })
@@ -27,16 +29,16 @@ app.get('',(req,res)=>{
 
 app.get('/about',(req,res)=>{
     res.render('about',{
-        name:'Hittu',
-        about:'I am hitesh and a newbie in the field of software development'
+        name:'Annonymous',
+        about:'I am a fresher in the field of software development.'
     })
 })
 
 app.get('/help',(req,res)=>{
     res.render('help',{
-        name:'Hitesh Jangir',
+        name:'Annonymous',
         std:'Mnit Jaipur',
-        helptext:'I will we happy to help you'
+        helptext:'For query kindly help yourself because there is no fault in my creations'
     })
 })
 
@@ -101,7 +103,7 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('Server is on at port 3000')
 })
 

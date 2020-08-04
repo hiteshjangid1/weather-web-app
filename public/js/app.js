@@ -11,7 +11,7 @@ weatherform.addEventListener('submit',(event)=>{
 
     var location=search.value
 
-    var x = "http://localhost:3000/weather?address="+encodeURIComponent(location)
+    var x = "/weather?address="+encodeURIComponent(location)
 
     fetch(x).then((response) => {
 
@@ -24,7 +24,7 @@ weatherform.addEventListener('submit',(event)=>{
             }
             else {
                 field.textContent ="Address: "+data.address
-                field2.textContent="Temperature: "+data.temperature
+                field2.textContent="Temperature: "+data.temperature+" Degree Centigrade"
 
                 // console.log("Address:", data.address)
                 // console.log("Temperature:", data.temperature)
